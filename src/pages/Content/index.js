@@ -1,6 +1,7 @@
 import { printLine } from './modules/print';
 
-console.log('Content script works!');
-console.log('Must reload extension for modifications to take effect.');
+console.log('컨텐츠 파일 :::::::');
+
+chrome.bookmarks.get('1', () => console.log('북마크!!'));
 
 printLine("Using the 'printLine' function from the Print Module");

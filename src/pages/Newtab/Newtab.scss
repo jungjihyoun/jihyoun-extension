@@ -2,8 +2,8 @@ $primary: #4fefb5;
 $font-color: #383838;
 
 .newtab {
-  padding: 2rem 2rem;
-  background: #ffffff;
+  padding: 4rem 2rem;
+  height: 100vh;
 }
 
 .clock {
@@ -11,18 +11,17 @@ $font-color: #383838;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: $font-color;
-  margin-bottom: 1.5rem;
+  margin-bottom: 4rem;
 
   &__time {
-    font-size: 7rem;
-    font-weight: 500;
+    font-size: 8rem;
+    font-weight: 700;
     line-height: 8rem;
   }
 
   &__day {
     font-size: 2rem;
-    font-weight: 500;
+    font-weight: 700;
   }
 }
 
@@ -41,7 +40,7 @@ $font-color: #383838;
 
     & li {
       font-size: 1.8rem;
-      line-height: 5rem;
+      line-height: 4.5rem;
       list-style-position: inside;
       white-space: nowrap;
       overflow: hidden;
@@ -53,12 +52,21 @@ $font-color: #383838;
 .notion {
   &__textarea {
     width: 51.2rem;
-    height: 22.5rem;
+    height: 20.5rem;
     margin-top: 2rem;
     padding: 1rem;
-    border-radius: 1rem;
     background: #383838;
     font-size: 1.1rem;
     color: #ffffff;
+    border-radius: 1rem;
+    border: 3px dashed #a5a5a5;
+  }
+}
+
+.star {
+  img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 }

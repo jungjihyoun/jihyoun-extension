@@ -7,8 +7,21 @@ const Popup = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>popoup</p>
+        <p
+          onClick={() => {
+            chrome.runtime.sendMessage('Light');
+          }}
+        >
+          Light
+        </p>
+        <p
+          onClick={() => {
+            chrome.runtime.sendMessage('Dark');
+          }}
+        >
+          {' '}
+          Dark
+        </p>
       </header>
     </div>
   );
