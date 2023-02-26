@@ -45,6 +45,14 @@ $font-color: #383838;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+
+      a:link {
+        color: inherit;
+      }
+
+      a:visited {
+        color: inherit;
+      }
     }
   }
 }

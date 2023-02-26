@@ -4,6 +4,7 @@ import Title from './component/Title';
 import './Newtab.scss';
 
 const Newtab = () => {
+  const [bookmarks, setBookmarks] = useState([]);
   const [Theme, setTheme] = useState(localStorage.getItem('TabTheme'));
   const [ThemeMode, setThemeMode] = useState({});
   const [hour, setHour] = useState(new Date().getHours());
@@ -18,14 +19,22 @@ const Newtab = () => {
   }, []);
 
   useEffect(() => {
+    chrome.bookmarks.getSubTree('0', function (tree) {
+      setBookmarks(
+        tree[0].children[0].children.filter((e) => e.title === 'daily')[0]
+          .children
+      );
+    });
+    console.log(bookmarks);
+  }, []);
+
+  useEffect(() => {
     const ThemeMode =
       Theme === 'Light'
         ? { background: '#ffffff', color: '#383838' }
         : { background: '#212121', color: '#ffffff' };
 
     setThemeMode(ThemeMode);
-
-    console.log(ThemeMode);
   }, [Theme]);
 
   return (
@@ -45,14 +54,13 @@ const Newtab = () => {
         <div className="bookmark">
           <Title title="Bookmark" width="20%" />
           <ul className="bookmark__list">
-            <li>
-              React 상태 관리 라이브러리 어쩌고 저쩌고 어쩌고 어쩌고 저쩌고
-              어쩌고 어쩌고 저쩌고 어쩌고
-            </li>
-            <li>React 상태 관리 라이브러리 어쩌고 저쩌고 어쩌고</li>
-            <li>React 상태 관리 라이브러리 어쩌고 저쩌고 어쩌고</li>
-            <li>React 상태 관리 라이브러리 어쩌고 저쩌고 어쩌고</li>
-            <li>React 상태 관리 라이브러리 어쩌고 저쩌고 어쩌고</li>
+            {bookmarks.map((e) => (
+              <li>
+                <a href={e.url} target="_blank" rel="noreferrer">
+                  {e.title}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
 
