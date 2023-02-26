@@ -1,0 +1,17 @@
+$primary: #4fefb5;
+$font-color: #383838;
+
+.Title {
+  width: 100%;
+  min-height: 2.3rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10rem;
+  background: #4fefb5;
+
+  > p {
+    text-align: center;
+    vertical-align: baseline;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+}

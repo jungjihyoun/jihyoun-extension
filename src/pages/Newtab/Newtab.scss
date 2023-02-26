@@ -1,10 +1,64 @@
-$myColor: orange;
+$primary: #4fefb5;
+$font-color: #383838;
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: $myColor;
+.newtab {
+  padding: 2rem 2rem;
+  background: #ffffff;
+}
+
+.clock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $font-color;
+  margin-bottom: 1.5rem;
+
+  &__time {
+    font-size: 7rem;
+    font-weight: 500;
+    line-height: 8rem;
+  }
+
+  &__day {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  flex-wrap: wrap;
+}
+
+.bookmark {
+  &__list {
+    width: 64.7rem;
+    height: auto;
+    margin: 2rem 2rem 0 0;
+
+    & li {
+      font-size: 1.8rem;
+      line-height: 5rem;
+      list-style-position: inside;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}
+
+.notion {
+  &__textarea {
+    width: 51.2rem;
+    height: 22.5rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: #383838;
+    font-size: 1.1rem;
+    color: #ffffff;
+  }
 }
